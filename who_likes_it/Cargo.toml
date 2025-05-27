@@ -1,0 +1,6 @@
+[package]
+name = "who_likes_it"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
