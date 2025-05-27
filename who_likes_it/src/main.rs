@@ -1,5 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    println!("{}", likes(&["Peter"]));
 }
 
 fn likes(names: &[&str]) -> String {
