@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::BTreeSet;
 
 fn main() {
     println!("Hello, world!");
@@ -6,13 +6,15 @@ fn main() {
 
 fn find_odd(arr: &[i32]) -> i32 {
     arr.iter()
-        .fold(HashMap::new(), |mut acc, curr| {
-            acc.entry(curr).and_modify(|cnt| *cnt += 1).or_insert(1);
+        .fold(BTreeSet::new(), |mut acc, curr| {
+            if !acc.insert(*curr) {
+                acc.remove(curr);
+            }
+
             acc
         })
-        .iter()
-        .find(|(_, v)| *v % 2 != 0)
-        .map_or(-1, |v| **v.0)
+        .pop_first()
+        .unwrap()
 }
 
 #[cfg(test)]
