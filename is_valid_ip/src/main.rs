@@ -1,5 +1,5 @@
 fn main() {
-    println!("Hello, world!");
+    is_valid_ip("192.168.178.1");
 }
 
 fn is_valid_ip(ip: &str) -> bool {
