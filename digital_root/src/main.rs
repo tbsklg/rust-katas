@@ -1,5 +1,5 @@
 fn main() {
-    println!("{:?}", digital_root(987654));
+    println!("{:?}", digital_root(123456789));
 }
 
 fn digital_root(n: i64) -> i64 {
